@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb5fhwq1t5170"]
+
+[ext_resource type="Texture2D" uid="uid://cj3huigs4maej" path="res://icon.svg" id="1_nqnbk"]
+[ext_resource type="Script" uid="uid://74ou55k48t0h" path="res://scenes/build_popup.gd" id="1_xdn4d"]
+
+[node name="BuildPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xdn4d")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DescLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "description"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_nqnbk")
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Build!"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

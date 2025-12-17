@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://8k1redokq4ps"]
+
+[ext_resource type="Script" uid="uid://cdyy66hrl4pbe" path="res://scenes/run.gd" id="1_2d5n6"]
+[ext_resource type="Script" uid="uid://cta04fcuv7ylj" path="res://data/base_resources/base_room.gd" id="2_kyqep"]
+[ext_resource type="Resource" uid="uid://beiw42qc3v36m" path="res://data/rooms/generator.tres" id="3_hnrwf"]
+
+[node name="Run" type="Node"]
+script = ExtResource("1_2d5n6")
+buildings_unlocked = Array[ExtResource("2_kyqep")]([ExtResource("3_hnrwf")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

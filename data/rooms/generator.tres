@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseRoom" load_steps=2 format=3 uid="uid://beiw42qc3v36m"]
+
+[ext_resource type="Script" uid="uid://cta04fcuv7ylj" path="res://data/base_resources/base_room.gd" id="1_q2g2d"]
+
+[resource]
+script = ExtResource("1_q2g2d")
+room_name = "Generator"
+room_desc = "Produces 5 Energy per turn. Only one of these can be built."
+square_size = Vector2(3, 3)
+metadata/_custom_type_script = "uid://cta04fcuv7ylj"

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://mta41mre428b"]
+
+[ext_resource type="Script" uid="uid://d0ga72ue222gw" path="res://scripts/grid.gd" id="1_t5fjg"]
+[ext_resource type="Script" uid="uid://dtmnn6tdbcali" path="res://scenes/moveable_camera.gd" id="2_w88cy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w88cy"]
+noise_type = 3
+frequency = 0.07
+domain_warp_amplitude = 369.045
+domain_warp_frequency = 0.01
+domain_warp_fractal_type = 2
+domain_warp_fractal_gain = 0.0
+
+[node name="Grid" type="Node2D"]
+script = ExtResource("1_t5fjg")
+noise = SubResource("FastNoiseLite_w88cy")
+
+[node name="GridSprites" type="Node2D" parent="."]
+
+[node name="Rooms" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_limits = true
+script = ExtResource("2_w88cy")

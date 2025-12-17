@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://5djv77bg808w"]
+
+[ext_resource type="Script" uid="uid://cdaspuu3ffitl" path="res://scenes/build_selector.gd" id="1_05ilg"]
+
+[node name="BuildSelector" type="Control"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_05ilg")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ColorRect" type="ColorRect" parent="Margin"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="Scroll" type="ScrollContainer" parent="Margin"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BuildingContainer" type="VBoxContainer" parent="Margin/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
