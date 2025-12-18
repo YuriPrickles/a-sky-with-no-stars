@@ -10,3 +10,8 @@ enum TerrainType{
 	Stonetop,
 	Building
 }
+enum PioneerGender{
+	Female,
+	Nonbinary,
+	Male,
+}

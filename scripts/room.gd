@@ -14,7 +14,7 @@ func _ready() -> void:
 				var tex:Texture2D = load("res://icondupe.svg")
 				room_bits[Vector2(x,y)] = tex
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:

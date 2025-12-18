@@ -8,6 +8,7 @@ extends Node2D
 const water_threshold = 0.3
 const grass_threshold = 0.6
 var terrain:Dictionary[Vector2,Enums.TerrainType]
+var room_map:Dictionary[Vector2,Room]
 
 func _ready() -> void:
 	noise.seed = randi()
@@ -35,7 +36,7 @@ func _ready() -> void:
 	camera.position = get_pos(16,16)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var mx =  floori(get_local_mouse_position().x)
 	var my =  floori(get_local_mouse_position().y)
 	var current_room:Room = null
@@ -56,14 +57,28 @@ func _process(delta: float) -> void:
 					type_count += 1
 			can_place = type_count < 2
 			current_room.placement_color = Color.RED if not can_place else Color.YELLOW
+		if Input.is_action_just_pressed("cancel_build"):
+			current_room.queue_free()
+			State.loaded_game.build_mode = false
+			State.loaded_game.building_to_build = null
 		if Input.is_action_just_pressed("selection"):
 			if can_place:
+				for segment in current_room.room_bits.keys():
+					terrain[get_tile_pos(mx,my) + segment] = Enums.TerrainType.Building
+					room_map[get_tile_pos(mx,my) + segment] = current_room
 				current_room.placing = false
 				current_room.placement_color = Color.WHITE
 				State.loaded_game.building_to_build = null
+				State.loaded_game.build_mode = false
+				print("Building Placed")
 			else:
 				print("Invalid Placement")
 			print(get_tile_pos(mx,my))
+	if not State.loaded_game.build_mode:
+		if Input.is_action_just_pressed("selection"):
+			print(get_tile_pos(mx,my))
+			if room_map.get(get_tile_pos(mx,my)) != null:
+				print(room_map.get(get_tile_pos(mx,my)).room_data.room_name)
 
 
 ##Gets the position equivalent from the tile coordinates.

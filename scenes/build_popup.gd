@@ -10,9 +10,10 @@ func _ready() -> void:
 	desc.text = "[font_size=16]%s" % room_info.room_desc
 
 
-func _process(delta: float) -> void:
-	pass
-
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("cancel_build"):
+		State.loaded_game.freezecam = false
+		queue_free()
 
 func _on_button_pressed() -> void:
 	State.loaded_game.freezecam = false

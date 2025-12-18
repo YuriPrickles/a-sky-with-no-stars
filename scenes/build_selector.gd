@@ -7,10 +7,10 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("build_menu"):
+		visible = not visible
+
 func add_building(room:BaseRoom):
 	var buildbutton:BuildingButton = preload("res://scenes/building_button.tscn").instantiate()
 	buildbutton.room_info = room

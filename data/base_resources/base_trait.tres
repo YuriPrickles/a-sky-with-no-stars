@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BaseTrait" load_steps=2 format=3 uid="uid://dpxra5bw4oack"]
+
+[ext_resource type="Script" uid="uid://ubhlifd3hrlg" path="res://data/base_resources/base_trait.gd" id="1_1r4lj"]
+
+[resource]
+script = ExtResource("1_1r4lj")
+name = "Antisocial"
+desc = "[-] Less likely to form relationships."
+metadata/_custom_type_script = "uid://ubhlifd3hrlg"

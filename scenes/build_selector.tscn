@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdaspuu3ffitl" path="res://scenes/build_selector.gd" id="1_05ilg"]
 
 [node name="BuildSelector" type="Control"]
+visible = false
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 3
 anchors_preset = 9

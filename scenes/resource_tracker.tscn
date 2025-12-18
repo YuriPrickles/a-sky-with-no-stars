@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://da28h3v6k6i3g"]
+
+[ext_resource type="Script" uid="uid://byay41ixshrvy" path="res://scenes/resource_tracker.gd" id="1_dw1c4"]
+
+[node name="ResourceTracker" type="Control"]
+custom_minimum_size = Vector2(160, 180)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_dw1c4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="EnergyText" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=16]Energy"
+fit_content = true
+scroll_active = false
+
+[node name="MetalText" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=16]Energy"
+fit_content = true
+scroll_active = false
+
+[node name="WaterText" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=16]Energy"
+fit_content = true
+scroll_active = false
+
+[node name="FoodText" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=16]Energy"
+fit_content = true
+scroll_active = false
+
+[node name="Button" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Next Turn"
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
