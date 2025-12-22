@@ -5,8 +5,5 @@
 
 [resource]
 script = ExtResource("1_gn80f")
-strength = 15
-dexterity = 15
-intelligence = 15
-passion = 0
+sanity = -10
 metadata/_custom_type_script = "uid://ca7mpiij3oxvn"

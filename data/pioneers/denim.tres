@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="BasePioneer" load_steps=3 format=3 uid="uid://g6rhx07m6rig"]
+[gd_resource type="Resource" script_class="BasePioneer" load_steps=5 format=3 uid="uid://g6rhx07m6rig"]
 
+[ext_resource type="Texture2D" uid="uid://ci3plohiiy7vx" path="res://assets/character_artwork/character_icons_small/icon_chara_denim.png" id="1_5nv4d"]
 [ext_resource type="Script" uid="uid://ca7mpiij3oxvn" path="res://data/base_resources/base_pioneer.gd" id="1_kv28k"]
 [ext_resource type="Script" uid="uid://ubhlifd3hrlg" path="res://data/base_resources/base_trait.gd" id="2_2a5y8"]
+[ext_resource type="Texture2D" uid="uid://d2uge6ibued3l" path="res://assets/character_artwork/character_portraits/portrait_chara_denim.png" id="2_w7o0l"]
 
 [resource]
 script = ExtResource("1_kv28k")
@@ -10,6 +12,9 @@ name = "Denim"
 firstname = "Dorthea"
 surname = "Dahl"
 title = "The ??"
+icon = ExtResource("1_5nv4d")
+portrait = ExtResource("2_w7o0l")
 strength = 8
+dexterity = 7
 intelligence = 6
 metadata/_custom_type_script = "uid://ca7mpiij3oxvn"

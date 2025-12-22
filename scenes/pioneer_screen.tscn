@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cblpyhodb3vfp"]
+[gd_scene load_steps=4 format=3 uid="uid://cblpyhodb3vfp"]
 
 [ext_resource type="Script" uid="uid://bc7iq7c440rp3" path="res://scenes/pioneer_screen.gd" id="1_682om"]
-[ext_resource type="Texture2D" uid="uid://cj3huigs4maej" path="res://icon.svg" id="1_g7go3"]
+[ext_resource type="Texture2D" uid="uid://b7r2o3mmnt824" path="res://assets/character_artwork/character_portraits/portrait_chara_alice.png" id="2_682om"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_682om"]
+atlas = ExtResource("2_682om")
+region = Rect2(200, 160, 800, 800)
 
 [node name="PioneerScreen" type="MarginContainer"]
 anchors_preset = 15
@@ -32,9 +36,13 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PioneerPic" type="TextureRect" parent="ScreenContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("1_g7go3")
-stretch_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_682om")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="StatsScreen" type="RichTextLabel" parent="ScreenContainer/HBoxContainer"]
 layout_mode = 2

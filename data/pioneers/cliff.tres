@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="BasePioneer" load_steps=3 format=3 uid="uid://v13o34hgiq0"]
+[gd_resource type="Resource" script_class="BasePioneer" load_steps=5 format=3 uid="uid://v13o34hgiq0"]
 
 [ext_resource type="Script" uid="uid://ca7mpiij3oxvn" path="res://data/base_resources/base_pioneer.gd" id="1_grha1"]
+[ext_resource type="Texture2D" uid="uid://clhcu2xy3yxwf" path="res://assets/character_artwork/character_icons_small/icon_chara_cliff.png" id="1_vy37u"]
+[ext_resource type="Texture2D" uid="uid://cw7a2tnedlid8" path="res://assets/character_artwork/character_portraits/portrait_chara_cliff.png" id="2_4cg3c"]
 [ext_resource type="Script" uid="uid://ubhlifd3hrlg" path="res://data/base_resources/base_trait.gd" id="2_xx1il"]
 
 [resource]
@@ -11,6 +13,9 @@ firstname = "Cleanthes"
 surname = "Claesson"
 title = "The Criminal"
 gender = 3
+icon = ExtResource("1_vy37u")
+portrait = ExtResource("2_4cg3c")
+strength = 7
 dexterity = 12
 intelligence = 2
 metadata/_custom_type_script = "uid://ca7mpiij3oxvn"

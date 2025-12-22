@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="BasePioneer" load_steps=4 format=3 uid="uid://cd4j7n3xht50m"]
+[gd_resource type="Resource" script_class="BasePioneer" load_steps=5 format=3 uid="uid://cd4j7n3xht50m"]
 
 [ext_resource type="Texture2D" uid="uid://cilwha3kh1qco" path="res://assets/character_artwork/character_icons_small/icon_chara_alice.png" id="1_35s3f"]
 [ext_resource type="Script" uid="uid://ca7mpiij3oxvn" path="res://data/base_resources/base_pioneer.gd" id="1_htuds"]
 [ext_resource type="Script" uid="uid://ubhlifd3hrlg" path="res://data/base_resources/base_trait.gd" id="2_35s3f"]
+[ext_resource type="Texture2D" uid="uid://b7r2o3mmnt824" path="res://assets/character_artwork/character_portraits/portrait_chara_alice.png" id="2_j0cpf"]
 
 [resource]
 script = ExtResource("1_htuds")
@@ -13,7 +14,9 @@ surname = "Atteberry"
 title = "The Dreamer"
 gender = 1
 icon = ExtResource("1_35s3f")
+portrait = ExtResource("2_j0cpf")
 strength = 6
+dexterity = 7
 intelligence = 8
 matches = Array[int]([-9223372036854775795, -9223372036854775793, -9223372036854775790])
 metadata/_custom_type_script = "uid://ca7mpiij3oxvn"

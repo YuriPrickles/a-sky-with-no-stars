@@ -7,8 +7,6 @@ var placing = true
 
 var placement_color:Color = Color.RED
 
-var assigned_pioneers:Array[BasePioneer]
-
 func _ready() -> void:
 	if room_data.size_type == Enums.SizeType.Square:
 		for x in range(room_data.square_size.x):

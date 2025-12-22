@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bte02qkps1wid" path="res://scenes/room_popup.gd" id="1_xiklm"]
 
 [node name="RoomPopup" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,7 +113,7 @@ scroll_active = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TabContainer" type="TabContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/RightScreen"]
+[node name="PioneerTabs" type="TabContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/RightScreen"]
 layout_mode = 2
 size_flags_vertical = 3
 

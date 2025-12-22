@@ -77,6 +77,10 @@ func _process(_delta: float) -> void:
 					terrain[get_tile_pos(mx,my) + segment] = Enums.TerrainType.Building
 					room_map[get_tile_pos(mx,my) + segment] = current_room
 				current_room.placing = false
+				var null_arr = []
+				for i in range(current_room.room_data.max_worker_count):
+					null_arr.append(null)
+				State.loaded_game.assigned_pioneers[current_room] = null_arr.duplicate()
 				current_room.placement_color = Color.WHITE
 				State.loaded_game.building_to_build = null
 				State.loaded_game.build_mode = false
@@ -89,11 +93,7 @@ func _process(_delta: float) -> void:
 			print(get_tile_pos(mx,my))
 			if room_map.get(get_tile_pos(mx,my)) != null:
 				var selected_room:Room = room_map.get(get_tile_pos(mx,my))
-				var roompopup:RoomPopup = preload("res://scenes/room_popup.tscn").instantiate()
-				roompopup.room_info = selected_room.room_data
-				State.loaded_game.selected_room = selected_room
-				State.loaded_game.canvas_layer.add_child(roompopup)
-				State.loaded_game.freezecam = true
+				State.loaded_game.show_room_popup(selected_room)
 				print(room_map.get(get_tile_pos(mx,my)).room_data.room_name)
 
 

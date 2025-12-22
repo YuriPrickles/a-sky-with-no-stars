@@ -2,9 +2,9 @@ class_name BuildingButton
 extends Button
 
 var room_info:BaseRoom
-
+@onready var building_name = $RichTextLabel
 func _ready() -> void:
-	text = room_info.room_name
+	building_name.text = "[font_size=24]" + room_info.room_name
 
 func _on_pressed() -> void:
 	var buildpopup:BuildPopup = preload("res://scenes/build_popup.tscn").instantiate()

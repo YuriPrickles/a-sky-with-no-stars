@@ -11,11 +11,13 @@ extends Resource
 @export var icon:Texture2D
 @export var portrait:Texture2D
 
+var occupied:bool = false
+
 @export_category("Stats")
-@export_range(0,15) var strength = 7
-@export_range(0,15) var dexterity = 7
-@export_range(0,15) var intelligence = 7
-@export_range(0,15) var sanity = 100
+@export_range(0,15, 1, "or_greater") var strength = 16
+@export_range(0,15, 1, "or_greater") var dexterity = 16
+@export_range(0,15, 1, "or_greater") var intelligence = 16
+@export_range(0,100, 1, "or_less") var sanity = 50
 
 @export_category("Traits")
 @export var traits:Array[BaseTrait]

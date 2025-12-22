@@ -5,6 +5,7 @@ var grid:Gridspace
 var build_selector:BuildSelector
 var res_tracker:ResourceTracker
 var pioneer_shelf:PioneerShelf
+var room_popup:RoomPopup
 
 var energy:int = 0
 var metal:int = 0
@@ -38,6 +39,8 @@ func _ready() -> void:
 	pioneer_shelf = preload("res://scenes/pioneer_shelf.tscn").instantiate()
 	canvas_layer.add_child(pioneer_shelf)
 	pioneer_shelf.set_pioneer_cards(pioneers)
+	room_popup = preload("res://scenes/room_popup.tscn").instantiate()
+	canvas_layer.add_child(room_popup)
 	for b in buildings_unlocked:
 		build_selector.add_building(b)
 	State.loaded_game = self
@@ -56,5 +59,10 @@ func progress_turn():
 	if build_mode: return
 	turn += 1
 	for room:Room in grid.rooms.get_children():
-		room.room_data.on_next_turn()
+		room.room_data.on_next_turn(room)
 		pass
+
+func show_room_popup(room:Room):
+	room_popup.room = room
+	room_popup.refresh_info_newroom()
+	room_popup.show()

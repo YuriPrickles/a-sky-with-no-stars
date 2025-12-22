@@ -43,8 +43,8 @@ text = "[font_size=24][center]PIONEER"
 fit_content = true
 scroll_active = false
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(64, 64)
+[node name="PioneerPic" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -56,14 +56,16 @@ expand_mode = 1
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[center]PEARL
+text = "[center][font_size=24]PEARL
 PLACEHOLDER
-[font_size=12]Female
+[font_size=16]Female
 Class: PLACEHOLDER
-STR 15 DEX 15 INT 15
+STR 15
+DEX 15 INT 15
 "
 fit_content = true
 scroll_active = false
 
+[connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]
 [connection signal="mouse_entered" from="ColorRect" to="." method="_on_color_rect_mouse_entered"]
 [connection signal="mouse_exited" from="ColorRect" to="." method="_on_color_rect_mouse_exited"]
