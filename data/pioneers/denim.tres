@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BasePioneer" load_steps=3 format=3 uid="uid://g6rhx07m6rig"]
+
+[ext_resource type="Script" uid="uid://ca7mpiij3oxvn" path="res://data/base_resources/base_pioneer.gd" id="1_kv28k"]
+[ext_resource type="Script" uid="uid://ubhlifd3hrlg" path="res://data/base_resources/base_trait.gd" id="2_2a5y8"]
+
+[resource]
+script = ExtResource("1_kv28k")
+id = -9223372036854775804
+name = "Denim"
+firstname = "Dorthea"
+surname = "Dahl"
+title = "The ??"
+strength = 8
+intelligence = 6
+metadata/_custom_type_script = "uid://ca7mpiij3oxvn"

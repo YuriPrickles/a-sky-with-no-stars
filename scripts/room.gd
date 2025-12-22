@@ -7,12 +7,17 @@ var placing = true
 
 var placement_color:Color = Color.RED
 
+var assigned_pioneers:Array[BasePioneer]
+
 func _ready() -> void:
 	if room_data.size_type == Enums.SizeType.Square:
 		for x in range(room_data.square_size.x):
 			for y in range(room_data.square_size.y):
 				var tex:Texture2D = load("res://icondupe.svg")
 				room_bits[Vector2(x,y)] = tex
+
+func get_room_name():
+	return room_data.room_name
 
 func _process(_delta: float) -> void:
 	queue_redraw()

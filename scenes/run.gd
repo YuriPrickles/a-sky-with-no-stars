@@ -16,8 +16,13 @@ var max_water:int = 15
 var max_food:int = 15
 
 @export var buildings_unlocked:Array[BaseRoom]
+@export var pioneers:Array[BasePioneer]
 @onready var canvas_layer = $CanvasLayer
 
+var assigned_pioneers:Dictionary[Room,Array]
+var selected_room:Room
+
+var no_mouse_interact = false
 var freezecam:bool = false
 var build_mode:bool = false
 var building_to_build:Room
@@ -32,6 +37,7 @@ func _ready() -> void:
 	canvas_layer.add_child(res_tracker)
 	pioneer_shelf = preload("res://scenes/pioneer_shelf.tscn").instantiate()
 	canvas_layer.add_child(pioneer_shelf)
+	pioneer_shelf.set_pioneer_cards(pioneers)
 	for b in buildings_unlocked:
 		build_selector.add_building(b)
 	State.loaded_game = self

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://x17rn6rkgnw2"]
+
+[ext_resource type="Script" uid="uid://dmje17wwjtmf6" path="res://data/rooms/generator.gd" id="1_lr3wl"]
+
+[resource]
+script = ExtResource("1_lr3wl")
+room_name = "Manual Generator"
+room_desc = "Assign a pioneer to generate 5 Energy per turn.
+Higher Dexterity pioneers have a chance to generate more energy."
+max_worker_count = 1
+square_size = Vector2(2, 2)
+metadata/_custom_type_script = "uid://cta04fcuv7ylj"

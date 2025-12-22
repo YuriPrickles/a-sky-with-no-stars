@@ -9,6 +9,7 @@ const water_threshold = 0.3
 const grass_threshold = 0.6
 var terrain:Dictionary[Vector2,Enums.TerrainType]
 var room_map:Dictionary[Vector2,Room]
+var oxygen_map:Dictionary[Vector2,bool]
 
 func _ready() -> void:
 	noise.seed = randi()
@@ -41,13 +42,17 @@ func _process(_delta: float) -> void:
 	var my =  floori(get_local_mouse_position().y)
 	var current_room:Room = null
 	var can_place = false
+	
 	if State.loaded_game.building_to_build:
 		current_room = State.loaded_game.building_to_build
 	if State.loaded_game.build_mode and current_room != null and current_room.placing:
 		if current_room.room_data.size_type == Enums.SizeType.Square:
 			current_room.position = get_pos_fromvec(get_tile_pos(mx,my,current_room.room_data.square_size))
 			var temp_terrains:Array[Enums.TerrainType] = []
+			var temp_oxycheck:bool = true
 			for segment in current_room.room_bits.keys():
+				if current_room.room_data.needs_oxygen:
+					temp_oxycheck = temp_oxycheck and oxygen_map.get(get_tile_pos(mx,my,current_room.room_data.square_size) + segment,false)
 				temp_terrains.append(terrain.get(get_tile_pos(mx,my,current_room.room_data.square_size) + segment))
 			var type_count = 0
 			for t_type in Enums.TerrainType.values():
@@ -55,7 +60,7 @@ func _process(_delta: float) -> void:
 					if t_type == int(Enums.TerrainType.Water) or t_type == int(Enums.TerrainType.Building):
 						type_count += 999
 					type_count += 1
-			can_place = type_count < 2
+			can_place = type_count < 2 and temp_oxycheck
 			current_room.placement_color = Color.RED if not can_place else Color.YELLOW
 		if Input.is_action_just_pressed("cancel_build"):
 			current_room.queue_free()
@@ -64,6 +69,11 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("selection"):
 			if can_place:
 				for segment in current_room.room_bits.keys():
+					if current_room.room_data.oxygen_squarius != Vector2.ZERO:
+						for ox_x in range(current_room.room_data.oxygen_squarius.x):
+							for ox_y in range(current_room.room_data.oxygen_squarius.y):
+								var oxyoffset = Vector2( (ceili(float(ox_x))) , (ceili(float(ox_y))) )
+								oxygen_map[get_tile_pos(mx,my) + (oxyoffset) - segment] = true
 					terrain[get_tile_pos(mx,my) + segment] = Enums.TerrainType.Building
 					room_map[get_tile_pos(mx,my) + segment] = current_room
 				current_room.placing = false
@@ -74,10 +84,16 @@ func _process(_delta: float) -> void:
 			else:
 				print("Invalid Placement")
 			print(get_tile_pos(mx,my))
-	if not State.loaded_game.build_mode:
+	if not State.loaded_game.build_mode and not State.loaded_game.no_mouse_interact:
 		if Input.is_action_just_pressed("selection"):
 			print(get_tile_pos(mx,my))
 			if room_map.get(get_tile_pos(mx,my)) != null:
+				var selected_room:Room = room_map.get(get_tile_pos(mx,my))
+				var roompopup:RoomPopup = preload("res://scenes/room_popup.tscn").instantiate()
+				roompopup.room_info = selected_room.room_data
+				State.loaded_game.selected_room = selected_room
+				State.loaded_game.canvas_layer.add_child(roompopup)
+				State.loaded_game.freezecam = true
 				print(room_map.get(get_tile_pos(mx,my)).room_data.room_name)
 
 

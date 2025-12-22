@@ -6,6 +6,7 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_w88cy"]
 noise_type = 3
 frequency = 0.07
+domain_warp_type = 2
 domain_warp_amplitude = 369.045
 domain_warp_frequency = 0.01
 domain_warp_fractal_type = 2

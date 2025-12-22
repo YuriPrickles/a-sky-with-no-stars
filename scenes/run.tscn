@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://8k1redokq4ps"]
+[gd_scene load_steps=10 format=3 uid="uid://8k1redokq4ps"]
 
 [ext_resource type="Script" uid="uid://cdyy66hrl4pbe" path="res://scenes/run.gd" id="1_2d5n6"]
 [ext_resource type="Script" uid="uid://cta04fcuv7ylj" path="res://data/base_resources/base_room.gd" id="2_kyqep"]
 [ext_resource type="Resource" uid="uid://beiw42qc3v36m" path="res://data/rooms/generator.tres" id="3_hnrwf"]
+[ext_resource type="Resource" uid="uid://x17rn6rkgnw2" path="res://data/rooms/manual_gen.tres" id="4_hnrwf"]
+[ext_resource type="Script" uid="uid://ca7mpiij3oxvn" path="res://data/base_resources/base_pioneer.gd" id="5_gk3tk"]
+[ext_resource type="Resource" uid="uid://cd4j7n3xht50m" path="res://data/pioneers/alice.tres" id="6_qsc0m"]
+[ext_resource type="Resource" uid="uid://cxtgl07uhghvu" path="res://data/pioneers/beowulf.tres" id="7_s3ewl"]
+[ext_resource type="Resource" uid="uid://v13o34hgiq0" path="res://data/pioneers/cliff.tres" id="8_o3bs3"]
+[ext_resource type="Resource" uid="uid://g6rhx07m6rig" path="res://data/pioneers/denim.tres" id="9_21lnt"]
 
 [node name="Run" type="Node"]
 script = ExtResource("1_2d5n6")
-buildings_unlocked = Array[ExtResource("2_kyqep")]([ExtResource("3_hnrwf")])
+buildings_unlocked = Array[ExtResource("2_kyqep")]([ExtResource("3_hnrwf"), ExtResource("4_hnrwf")])
+pioneers = Array[ExtResource("5_gk3tk")]([ExtResource("6_qsc0m"), ExtResource("7_s3ewl"), ExtResource("8_o3bs3"), ExtResource("9_21lnt")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

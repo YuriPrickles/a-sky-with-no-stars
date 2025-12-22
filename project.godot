@@ -24,6 +24,10 @@ State="*res://scripts/State.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[gui]
+
+theme/custom_font="uid://e4lrtjngyn25"
+
 [input]
 
 mouse_wheel_up={

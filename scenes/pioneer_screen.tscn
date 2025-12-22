@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cblpyhodb3vfp"]
+
+[ext_resource type="Script" uid="uid://bc7iq7c440rp3" path="res://scenes/pioneer_screen.gd" id="1_682om"]
+[ext_resource type="Texture2D" uid="uid://cj3huigs4maej" path="res://icon.svg" id="1_g7go3"]
+
+[node name="PioneerScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_682om")
+metadata/_tab_index = 0
+
+[node name="ScreenContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PioneerText" type="RichTextLabel" parent="ScreenContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=24]NO ASSIGNED PIONEER."
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PioneerPic" type="TextureRect" parent="ScreenContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_g7go3")
+stretch_mode = 2
+
+[node name="StatsScreen" type="RichTextLabel" parent="ScreenContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=24]STR 6
+DEX 7
+INT 8
+SAN 100%"
+fit_content = true
+scroll_active = false
