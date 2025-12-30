@@ -15,6 +15,7 @@ var max_energy:int = 15
 var max_metal:int = 15
 var max_water:int = 15
 var max_food:int = 15
+var resource_dict:Dictionary[Enums.ResourceType,int]
 
 @export var buildings_unlocked:Array[BaseRoom]
 @export var pioneers:Array[BasePioneer]
@@ -46,6 +47,10 @@ func _ready() -> void:
 	State.loaded_game = self
 
 func _process(_delta: float) -> void:
+	resource_dict[Enums.ResourceType.Energy] = energy
+	resource_dict[Enums.ResourceType.Metal] = metal
+	resource_dict[Enums.ResourceType.Water] = water
+	resource_dict[Enums.ResourceType.Food] = food
 	grid.camera.movable = not freezecam
 	res_tracker.set_texts(energy,metal,water,food)
 

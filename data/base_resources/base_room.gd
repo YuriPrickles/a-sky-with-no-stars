@@ -6,8 +6,8 @@ extends Resource
 @export_multiline var room_desc:String = "This room is a placeholder."
 
 @export_category("Resource Costs")
-@export var build_cost:Dictionary[State.ResourceType,int]
-@export var maintenance_cost:Dictionary[State.ResourceType,int]
+@export var build_cost:Dictionary[Enums.ResourceType,int]
+@export var maintenance_cost:Dictionary[Enums.ResourceType,int]
 @export var needs_oxygen = true
 ##How many pioneers can be assigned here at maximum.[br]e.g. Barracks can have 5 workers
 @export var max_worker_count:int = 1

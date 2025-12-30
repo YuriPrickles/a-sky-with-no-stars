@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bjf5bpy74qxyd"]
+
+[ext_resource type="Script" uid="uid://dirgclnl6ytrx" path="res://data/rooms/tunnel.gd" id="1_33268"]
+
+[resource]
+script = ExtResource("1_33268")
+room_name = "Tunnel"
+room_desc = "Assign a pioneer to generate Metal per turn.
+
+Higher Strength pioneers can mine for more metal."
+build_cost = Dictionary[int, int]({
+0: 2
+})
+square_size = Vector2(2, 2)
+str_thresholds = Dictionary[int, int]({
+0: 0,
+1: 2,
+3: 3,
+7: 5,
+11: 7
+})
+metadata/_custom_type_script = "uid://cta04fcuv7ylj"

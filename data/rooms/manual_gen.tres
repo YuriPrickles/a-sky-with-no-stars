@@ -5,10 +5,12 @@
 [resource]
 script = ExtResource("1_lr3wl")
 room_name = "Manual Generator"
-room_desc = "Assign a pioneer to generate 5 Energy per turn.
+room_desc = "Assign a pioneer to generate Energy per turn.
 
-Higher Dexterity pioneers have a chance to generate more energy."
-max_worker_count = 2
+Higher Dexterity pioneers can get more energy."
+build_cost = Dictionary[int, int]({
+0: 2
+})
 square_size = Vector2(2, 2)
 dex_thresholds = Dictionary[int, int]({
 0: 0,

@@ -4,6 +4,12 @@ enum SizeType{
 	Square,
 	Tetris
 }
+enum ResourceType{
+	Energy,
+	Metal,
+	Water,
+	Food
+}
 enum TerrainType{
 	Water,
 	Grass,

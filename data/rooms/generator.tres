@@ -9,6 +9,7 @@ room_desc = "The start of a great colony.
 Produces 5 Energy per turn. Provides oxygen in a 5x5 square around the perimeter squares.
 Only one can be built."
 needs_oxygen = false
+max_worker_count = 0
 square_size = Vector2(3, 3)
 oxygen_squarius = Vector2(5, 5)
 metadata/_custom_type_script = "uid://cta04fcuv7ylj"
