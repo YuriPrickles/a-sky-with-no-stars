@@ -44,13 +44,13 @@ fit_content = true
 scroll_active = false
 
 [node name="PioneerPic" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(160, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 texture = ExtResource("2_ji7lf")
-expand_mode = 1
+expand_mode = 2
 
 [node name="InfoLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2

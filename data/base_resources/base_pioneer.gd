@@ -9,6 +9,7 @@ extends Resource
 @export var title:String = "The Ultimate"
 @export var gender:Enums.PioneerGender = Enums.PioneerGender.Female
 @export var icon:Texture2D
+@export var card_arts:Array[Texture2D]
 @export var portrait:Texture2D
 
 var occupied:bool = false

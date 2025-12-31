@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="BasePioneer" load_steps=5 format=3 uid="uid://cxtgl07uhghvu"]
+[gd_resource type="Resource" script_class="BasePioneer" load_steps=9 format=3 uid="uid://cxtgl07uhghvu"]
 
 [ext_resource type="Texture2D" uid="uid://c3i2tpuj6awrp" path="res://assets/character_artwork/character_icons_small/icon_chara_beowulf.png" id="1_20rs0"]
+[ext_resource type="Texture2D" uid="uid://bnlij77pgy7hk" path="res://assets/character_artwork/character_cardart/card_chara_beowulf1.png" id="1_c5b28"]
 [ext_resource type="Script" uid="uid://ca7mpiij3oxvn" path="res://data/base_resources/base_pioneer.gd" id="1_t0w1i"]
+[ext_resource type="Texture2D" uid="uid://dffeamfm6ghha" path="res://assets/character_artwork/character_cardart/card_chara_beowulf2.png" id="2_7bqmt"]
 [ext_resource type="Script" uid="uid://ubhlifd3hrlg" path="res://data/base_resources/base_trait.gd" id="2_eihj2"]
 [ext_resource type="Texture2D" uid="uid://jesn777undsa" path="res://assets/character_artwork/character_portraits/portrait_chara_beowulf.png" id="2_uvfx8"]
+[ext_resource type="Texture2D" uid="uid://cxnenb7rn7lyo" path="res://assets/character_artwork/character_cardart/card_chara_beowulf3.png" id="3_2yfob"]
+[ext_resource type="Texture2D" uid="uid://bc568gocbxmto" path="res://assets/character_artwork/character_cardart/card_chara_beowulf4.png" id="4_yuswk"]
 
 [resource]
 script = ExtResource("1_t0w1i")
@@ -14,6 +18,7 @@ surname = "Bachman"
 title = "The ?"
 gender = 3
 icon = ExtResource("1_20rs0")
+card_arts = Array[Texture2D]([ExtResource("1_c5b28"), ExtResource("2_7bqmt"), ExtResource("3_2yfob"), ExtResource("4_yuswk")])
 portrait = ExtResource("2_uvfx8")
 strength = 10
 dexterity = 4

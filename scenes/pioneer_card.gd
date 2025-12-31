@@ -17,9 +17,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if pioneer_resource:
-		gray_texture = to_grayscale(pioneer_resource.icon)
+		gray_texture = to_grayscale(pioneer_resource.card_arts[0])
 		disabled = pioneer_resource.occupied
-		pioneer_pic.texture = gray_texture if disabled else pioneer_resource.icon
+		pioneer_pic.texture = gray_texture if disabled else pioneer_resource.card_arts[0]
 		card_color.color = Color("4a4a4aff") if disabled else Color("572b4b")
 	offset_top = move_toward(offset_top, ui_offset, abs(offset_top - ui_offset * 2) * 4 * delta)
 	offset_bottom = move_toward(offset_bottom, ui_offset, abs(offset_bottom - ui_offset * 2) * 4 * delta)
